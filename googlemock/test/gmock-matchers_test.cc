@@ -633,12 +633,12 @@ TEST(MatcherCastTest, ConversionConstructorIsUsed) {
   EXPECT_FALSE(m.Matches(ConvertibleFromAny(2)));
 }
 
-TEST(MatcherCastTest, FromConvertibleFromAny) {
-  Matcher<ConvertibleFromAny> m =
-      MatcherCast<ConvertibleFromAny>(Eq(ConvertibleFromAny(1)));
-  EXPECT_TRUE(m.Matches(ConvertibleFromAny(1)));
-  EXPECT_FALSE(m.Matches(ConvertibleFromAny(2)));
-}
+//TEST(MatcherCastTest, FromConvertibleFromAny) {
+//  Matcher<ConvertibleFromAny> m =
+//      MatcherCast<ConvertibleFromAny>(Eq(ConvertibleFromAny(1)));
+//  EXPECT_TRUE(m.Matches(ConvertibleFromAny(1)));
+//  EXPECT_FALSE(m.Matches(ConvertibleFromAny(2)));
+//}
 
 struct IntReferenceWrapper {
   IntReferenceWrapper(const int& a_value) : value(&a_value) {}
@@ -750,12 +750,12 @@ TEST(SafeMatcherCastTest, ConversionConstructorIsUsed) {
   EXPECT_FALSE(m.Matches(ConvertibleFromAny(2)));
 }
 
-TEST(SafeMatcherCastTest, FromConvertibleFromAny) {
-  Matcher<ConvertibleFromAny> m =
-      SafeMatcherCast<ConvertibleFromAny>(Eq(ConvertibleFromAny(1)));
-  EXPECT_TRUE(m.Matches(ConvertibleFromAny(1)));
-  EXPECT_FALSE(m.Matches(ConvertibleFromAny(2)));
-}
+//TEST(SafeMatcherCastTest, FromConvertibleFromAny) {
+//  Matcher<ConvertibleFromAny> m =
+//      SafeMatcherCast<ConvertibleFromAny>(Eq(ConvertibleFromAny(1)));
+//  EXPECT_TRUE(m.Matches(ConvertibleFromAny(1)));
+//  EXPECT_FALSE(m.Matches(ConvertibleFromAny(2)));
+//}
 
 TEST(SafeMatcherCastTest, ValueIsNotCopied) {
   int n = 42;
